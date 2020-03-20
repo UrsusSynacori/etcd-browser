@@ -1,16 +1,10 @@
-FROM ubuntu:14.04
+FROM node:13.10.1-alpine3.11 
 
-MAINTAINER Christoph Wiechert <wio@psitrax.de>
-MAINTAINER https://github.com/henszey
+RUN apk upgrade
 
-RUN apt-get update
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install -y nodejs
+COPY ./etcd-browser /home/node/etcd-browser
+WORKDIR /home/node/etcd-browser
 
-RUN mkdir /app
-ADD . /app/
-
-WORKDIR /app
 EXPOSE 8000
 
 CMD ["nodejs", "server.js"]

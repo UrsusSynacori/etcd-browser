@@ -1,14 +1,8 @@
-
 # etcd browser
 
-## Demo
-[http://henszey.github.io/etcd-browser/](http://henszey.github.io/etcd-browser/)
+Forked From: [http://henszey.github.io/etcd-browser/](http://henszey.github.io/etcd-browser/)
 
-## Screen Shot
-![etcd-browser Screen Shot](http://henszey.github.io/etcd-browser/images/etcdbrowser.png)
-
-## TODO
-* Implement missing features (TTL)
+This repository moves the codebase onto a node:13 / alpine container, resolving some unusual DNS resolution failures that I was seeing in kubernetes with the old Ubuntu 14 base.
 
 ## To build/run as a Docker container:
 
@@ -25,7 +19,7 @@ You can configure the builtin server using environment variables:
  * AUTH_PASS: Password for http basic auth
  * ETCD_HOST: IP of the etcd host the internal proxy should use [172.17.42.1]
  * ETCD_PORT: Port of the etcd daemon [4001]
- * SERVER_PORT: Port of builtin server
+ * SERVER_PORT: Port of built-in server
  
 If you use a secured etcd:
  * ETCDCTL_CA_FILE
